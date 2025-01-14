@@ -1,9 +1,7 @@
-const HomeContainer: React.FC = () => {
-    return (
-    <div>
-Home  
+import Home from "../components/Home"
 
-    </div> 
-    )
+const HomeContainer: React.FC = () => {
+    return (<Home/>
+ )
 }
 export default HomeContainer 
