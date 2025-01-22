@@ -1,12 +1,3 @@
-// import { useParams } from "react-router-dom"
-
-// const DetallesTrabajadorContainer: React.FC = () => {
-//     const {id} = useParams()
-//     return (
-        
-// )
-// }
-// export default DetallesTrabajadorContainer 
 
 import { useForm } from "react-hook-form";
 import { FormControl } from "@mui/material";
@@ -14,7 +5,7 @@ import {TextField} from "@mui/material";
 import { Controller } from "react-hook-form";
 import MenuItem from "@mui/material/MenuItem";
 
-const DetallesTrabajadorContainer: React.FC = () => {
+const NuevoUsuarioContainer: React.FC = () => {
     const { /*register,reset,, setValue*/ handleSubmit,  control } = useForm();
   
     // Función para manejar el envío del formulario
@@ -24,7 +15,7 @@ const DetallesTrabajadorContainer: React.FC = () => {
     return (
          <form onSubmit={handleSubmit(onSubmit)}>
          <Controller
-        name="first_name"
+        name="username"
         control={control}
         render={({
           field: { value, onChange, onBlur, ref },
@@ -37,9 +28,9 @@ const DetallesTrabajadorContainer: React.FC = () => {
             error={Boolean(error)}
           >
             <TextField
-               label="Nombre completo"              // Etiqueta visible para el usuario
+               label="Nombre de Usuario"              // Etiqueta visible para el usuario
                required                        // Hace obligatorio el campo
-               id="first_name"                 // Identificador único del campo
+               id="username"                 // Identificador único del campo
                variant="outlined"              // Usa el diseño de borde "outlined"
                value={value ?? ''}             // Controla el valor actual del campo
                onChange={onChange}             // Maneja cambios en el valor del campo
@@ -51,7 +42,7 @@ const DetallesTrabajadorContainer: React.FC = () => {
         )}
 />
 <Controller
-        name="carnet de identidad"
+        name="password"
         control={control}
         render={({
           field: { value, onChange, onBlur, ref },
@@ -64,9 +55,9 @@ const DetallesTrabajadorContainer: React.FC = () => {
             error={Boolean(error)}
           >
             <TextField
-              label="Carnet de Identidad"
+              label="Contraseña"
               required
-              id="last_name"
+              id="password"
               variant="outlined"
               value={value ?? ''}
               onChange={onChange}
@@ -78,34 +69,7 @@ const DetallesTrabajadorContainer: React.FC = () => {
           </FormControl>
         )}
 />
-<Controller
-        name="Número de Teléfono"
-        control={control}
-        render={({
-          field: { value, onChange, onBlur, ref },
-          fieldState: { error }
-        }) => (
-          <FormControl
-            required
-            fullWidth
-            variant="standard"
-            error={Boolean(error)}
-          >
-            <TextField
-              label="Número de Teléfono"
-              required
-              id="last_name"
-              variant="outlined"
-              value={value ?? ''}
-              onChange={onChange}
-              onBlur={onBlur}
-              inputRef={ref}
-              fullWidth    
-              //sx={{ width: '500px' }}
-            />
-          </FormControl>
-        )}
-/>
+
 <Controller
         name="Correo Electrónico"
         control={control}
@@ -122,7 +86,7 @@ const DetallesTrabajadorContainer: React.FC = () => {
             <TextField
               label="Correo Electrónico"
               required
-              id="last_name"
+              id="password"
               variant="outlined"
               value={value ?? ''}
               onChange={onChange}
@@ -135,7 +99,7 @@ const DetallesTrabajadorContainer: React.FC = () => {
         )}
 />
 <Controller
-        name="ocupación"
+        name="rol"
         control={control}
         render={({
           field: { value, onChange, onBlur },
@@ -153,7 +117,7 @@ const DetallesTrabajadorContainer: React.FC = () => {
               select
               // native="true"
               // className={classes.textField}
-              label="ocupación"
+              label="Rol"
               margin="normal"
               variant="outlined"
               onChange={onChange}
@@ -163,53 +127,18 @@ const DetallesTrabajadorContainer: React.FC = () => {
               
             >
               <MenuItem value=""/>            
-              <MenuItem value="Chofer"> Chofer </MenuItem>
-              <MenuItem value="Recepcionista"> Recepcionista </MenuItem>
-              <MenuItem value="Administrador"> Administrador </MenuItem>
+              <MenuItem value="Admin"> Admin </MenuItem>
+              <MenuItem value="Trabajador"> Trabajador </MenuItem>
+              <MenuItem value="Jefe"> Jefe </MenuItem>
            </TextField>
           </FormControl>
         )}
 />
-<Controller
-        name="select"
-        control={control}
-        render={({
-          field: { value, onChange, onBlur },
-          fieldState: { error }
-        }) => (
-          <FormControl
-            required
-            fullWidth
-            variant="standard"
-            error={Boolean(error)}
-          >
-           <TextField
-              id="id"
-              name="name"
-              select
-              // native="true"
-              // className={classes.textField}
-              label="Estado"
-              margin="normal"
-              variant="outlined"
-              onChange={onChange}
-              onBlur={onBlur}
-              value={value}
 
-              
-            >
-              <MenuItem value=""/>            
-              <MenuItem value="Activo"> Activo </MenuItem>
-              <MenuItem value="Licencia"> Licencia </MenuItem>
-              <MenuItem value="Despedido"> Despedido </MenuItem>
-           </TextField>
-          </FormControl>
-        )}
-/>
 
       
         <button type="submit">Submit</button>
       </form>
     );
 }
-  export default DetallesTrabajadorContainer
+  export default NuevoUsuarioContainer

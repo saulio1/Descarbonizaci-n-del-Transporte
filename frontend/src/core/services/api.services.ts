@@ -9,6 +9,20 @@ class apiService {
             baseURL: `${this.apiURL}/${url}`
           })
         }
+     
+
+      // // Interceptor para añadir el token de autenticación a las solicitudes
+      // this.axios.interceptors.request.use(
+      //     (config) => {
+      //         const token = localStorage.getItem('authToken');
+      //         if (token) {
+      //             config.headers.Authorization = `Bearer ${token}`;
+      //         }
+      //         return config;
+      //     },
+      //     (error) => Promise.reject(error)
+      // );
+  
 onSuccess = <T>(response: AxiosResponse<T>): T => response.data
 
 onError = (error: AxiosError): Promise<never> => {

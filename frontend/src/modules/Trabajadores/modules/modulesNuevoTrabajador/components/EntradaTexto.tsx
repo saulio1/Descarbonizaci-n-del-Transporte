@@ -5,7 +5,7 @@ import { Button, Paper } from "@mui/material";
 export const FormWithoutHookForm = () => {
   const [textValue, setTextValue] = useState<string>("");
 
-  const onTextChange = (e: any) => setTextValue(e.target.value);
+  const onTextChange = (e: React.ChangeEvent<HTMLInputElement>) => setTextValue(e.target.value);
   const handleSubmit = () => console.log(textValue);
   const handleReset = () => setTextValue("");
 

@@ -7,9 +7,10 @@ import TableRow from '@mui/material/TableRow'
 import Paper from '@mui/material/Paper'
 import { Action, ColumnDefinition, PaginationProp, Row } from './types'
 import { FC } from 'react'
-import TablePagination from './TablaPaginacionEquip'
+import TablePagination from './TablaPaginacion'
 import { IconButton, SxProps } from '@mui/material'
 import DisabledByDefaultRoundedIcon from '@mui/icons-material/DisabledByDefaultRounded'
+
 
 interface Props<T> {
   rows: T[]

@@ -1,15 +1,16 @@
 import { Box, Button, /*Typography*/ } from "@mui/material"
-//import TrabajadorTabla from "../components/tablatrabajador"
 import { useNavigate } from "react-router-dom"
 import Example from "../components/example"
-const TrabajadorContainer: React.FC = () => {
+
+const UsuariosContainer: React.FC = () => {
 const navigate = useNavigate()
           return <Box display='flex' flexDirection='column'>
                 
                    {/* // <Typography variant="h1" fontSize='2rem'> Módulo de trabajadores</Typography> */}
                     <Example/>
-                    <Button  onClick={()=>{navigate('nuevotrabajador')} }sx={{alignSelf: "flex-end", color: "white", background: "blue"}}>Crear nuevo trabajador</Button>
+                    <Button  onClick={()=>{navigate('nuevousuario')} }sx={{alignSelf: "flex-end", color: "white", background: "blue", margin: "0.2%"}}>Crear nuevo Usuario</Button>
+                    <Button  onClick={()=>{navigate('roles')} }sx={{alignSelf: "flex-end", color: "white", background: "blue",margin: "0.2%"}}>Gestión de Roles</Button>
                 </Box>
 
         }
-export default TrabajadorContainer 
+export default UsuariosContainer 

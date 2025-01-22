@@ -1,7 +1,14 @@
 {
+  
+    "compilerOptions": {
+      "noImplicitAny": false, // Desactiva la verificación estricta de `any`
+      "suppressImplicitAnyIndexErrors": true
+    },
+  
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ]
 }
+

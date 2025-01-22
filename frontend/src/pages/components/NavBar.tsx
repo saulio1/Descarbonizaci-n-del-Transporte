@@ -10,7 +10,7 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
 
 const pages: pageType[] = [{
@@ -20,7 +20,11 @@ const pages: pageType[] = [{
 {
 label: 'Equipamiento',
 url: './equipamiento'
-}];
+},
+{
+  label: 'Usuario',
+  url: './usuarios'
+  }];
 
 
 const settings = ['hola', 'Account', 'Dashboard', 'Logout'];
@@ -53,7 +57,7 @@ const NavBar: React.FC = () => {
     <AppBar sx={{position:'relative'}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <HomeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -106,7 +110,7 @@ const NavBar: React.FC = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <HomeIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
